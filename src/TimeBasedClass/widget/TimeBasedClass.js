@@ -78,17 +78,16 @@ define([
                 var time = this._contextObj.get(this.referenceDateAttribute);
                 if ( time ) {
                     var hours = mx.parser.formatValue(time, 'datetime', { datePattern: "HH" });
-                    //var minutes = mx.parser.formatValue(time, 'datetime', { datePattern: "mm" });
-
                     if ( hours == '00') {
                         showClassMidnight = true;
                     }
 
                     var now = new Date();
-                    var hoursNow = mx.parser.formatValue(now, 'datetime', { datePattern: "HH" });
-                    //var minutesNow = mx.parser.formatValue(now, 'datetime', { datePattern: "mm" });
 
-                    if ( hours == hoursNow ) {
+                    var timestringHoursNow = mx.parser.formatValue(now, 'datetime', { datePattern: "yyyyMMddHH" });
+                    var timestringHoursAttribute = mx.parser.formatValue(time, 'datetime', { datePattern: "yyyyMMddHH" });
+
+                    if ( timestringHoursAttribute == timestringHoursNow ) {
                         showClass = true;
                     }
                 }
