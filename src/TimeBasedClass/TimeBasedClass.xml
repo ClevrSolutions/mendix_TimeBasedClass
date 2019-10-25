@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="TimeBasedClass.widget.TimeBasedClass" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>TimeBasedClass</name>
+    <description>Give an element a class based on the current time</description>
+
+    <icon />
+
+    <properties>
+        <property key="referenceDateAttribute" type="attribute" required="false">
+            <caption>Reference DateTime</caption>
+            <category>Behavior</category>
+            <description>The DateTime to compare with</description>
+            <attributeTypes>
+                <attributeType name="DateTime"/>
+            </attributeTypes>
+        </property>
+        <property key="className" type="string" required="false">
+            <caption>Class Name for Attribute</caption>
+            <category>Behavior</category>
+            <description>Class that is set when current hour matches attribute.</description>
+        </property>
+        <property key="classNameMidnight" type="string" required="false">
+            <caption>Class Name for Midnight</caption>
+            <category>Behavior</category>
+            <description>Class that is set when current hour matches 0.</description>
+        </property>
+        <property key="applyToEnum" type="enumeration" required="true" defaultValue="PARENT">
+            <caption>Apply To</caption>
+            <category>Appearance</category>
+            <description>Determines to which element the class is applied.</description>
+            <enumerationValues>
+                <enumerationValue key="PARENT">Parent</enumerationValue>
+                <enumerationValue key="PARENTv2">Parent v2</enumerationValue>
+                <enumerationValue key="SIBLING">Previous Sibling</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="parentLevel" type="integer" required="true" defaultValue="2">
+            <caption>Parent level</caption>
+            <category>Appearance</category>
+            <description>Only applicable for Parent v2. Determines how many levels up the parent tree to go.</description>
+        </property>
+        <property key="refreshSeconds" type="integer" required="true" defaultValue="0">
+            <caption>Refresh Interval (seconds)</caption>
+            <category>Behavior</category>
+            <description>Determine refresh frequency.</description>
+        </property>
+    </properties>
+</widget>
